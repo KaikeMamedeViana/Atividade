@@ -1,0 +1,32 @@
+.largura {
+    background-color: #ffa500;
+    height: 500px;
+    width: 500px;
+}
+
+.altura {
+    background-color:  #90ee90;
+    height:  250px;
+    width: 250px;
+}
+
+.titulo {
+    color: white;
+    background-color: red;
+    font-size: 25px;
+    font-family: monospace;
+    font-weight: 1000;
+    
+}
+
+.largura02 {
+    width: 50%;
+    height: 50vh;
+    background-color: rgb(141, 253, 253);
+}
+
+.filha {
+    width: 75vh;
+    height: 50%;
+    background-color: rgb(170, 9, 9);
+}

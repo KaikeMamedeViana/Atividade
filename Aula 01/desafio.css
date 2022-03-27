@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+}
+.margem {
+    margin: 0;
+    padding: 0;
+}
+
+.classe1 {
+    background-color: #915c5c;
+    width: 75%;
+    height: 45vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 15px black;
+}
+
+.classe2 {
+    display: flex;
+    background-color: white;
+    height: 60%;
+    width: 80%;
+    border: #030458 solid 15px;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #332cff;
+    font-size: larger;
+    font-weight: 1000;
+}
+
+
+
+.azul {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    background-color: #0000ff;
+    height: 50px;
+    width: 70%;
+    margin-top: 100px;
+    
+}
+
+.roxa {
+    display: flex;
+    justify-content: center;
+    background-color: #800080;
+    width: 40%;
+    height: 50px;
+    align-items: center;
+    margin: auto;
+}
+
+.verde {
+    display: flex;
+    justify-content: center;
+    background-color: #008000;
+    width: 60%;
+    height: 50px;
+    margin: auto;
+   
+}
+
+.amarela {
+    display: flex;
+    justify-content: center;
+    background-color: #ffff00;
+    width: 50%;
+    height: 50px;
+    margin: auto;
+}
+
+.vermelho {
+    display: flex;
+    justify-content: end;
+    padding: 0;
+    list-style: none;
+    background-color: #ff0000;
+    width: 100%;
+    height: 50px; 
+    margin-top: 100px;
+}
+.aqua{
+    background-color: #007c80;
+    list-style: none;
+    width: 25%;
+    margin-left: 500px;
+
+}
+.limao{
+    background-color: #01ff00;
+    list-style: none;
+    width: 37.5%;
+}
