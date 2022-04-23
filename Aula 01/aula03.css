@@ -1,0 +1,46 @@
+.classeum {
+background-color: white;
+height: 500px;
+width: 50vw;
+border: 10px dotted black;
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+}
+.classedois{
+background-color: yellow;
+height: 50px;
+width: 30%;
+}
+.classetres {
+background-color: rgb(237, 157, 9);
+height: 100px;
+width: 30%;
+}
+.classequatro{
+background-color: green;
+color: white;
+font-size: 30px;
+margin: 50px 0 0 0;
+}
+
+/*
+
+
+
+   E) Tenha uma quarta div, que:
+
+      E1) Seja filha da div B);
+
+      E2) Tenha cor de fundo verde (utilize o RGB);
+
+      E3) Tenha a cor do seu texto como branco;
+
+      E4) Um tamanho de fonte de 30 pixels;
+
+      E5) O elemento deverá conter algum texto;
+
+      E6) Tenha um espaçamento INTERNO de 50 pixels;
+
+      E7) Tenha um espaçamento EXTERNO de 50 pixels na lateral esquerda, e no topo do elemento;
