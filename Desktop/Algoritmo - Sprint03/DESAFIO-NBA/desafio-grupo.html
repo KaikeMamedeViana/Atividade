@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Valor da premiação Total: <input id="inp_premiacao" type="number"> <br>
+    Número máximo de rodadas: <input id="inp_rodadas" type="number"> <br>
+
+    Resultado do time A: 
+    <select id="slc_timeA">
+        <option value="3">Vitória</option>
+        <option value="1">Empate</option>
+        <option value="0">Derrota</option>
+    </select> <br>
+    Resultado do time B: 
+    <select id="slc_timeB">
+        <option value="3">Vitória</option>
+        <option value="1">Empate</option>
+        <option value="0">Derrota</option>
+    </select> <br>
+
+
+    Resultado do time C: 
+    <select id="slc_timeC">
+        <option value="3">Vitória</option>
+        <option value="1">Empate</option>
+        <option value="0">Derrota</option>
+    </select> <br>
+
+    <button onclick="realizar()">Realizar Rodada</button>
+    <button onclick="revelar()">Revelar Premiação</button> <br>
+
+
+    Rodada Atual:<span id="rodada_atual" type="number">0</span> <br>
+    Time A:<span id="spn_pontos_A" type="number">0</span> <br>
+    Time B:<span id="spn_pontos_B" type="number"> 0</span> <br>
+    Time C: <span id="spn_pontos_C" type="number">0</span> <br>
+    <span style="color: red;" id="campeao"></span>
+    <span style="color: green ;" id="empate"></span>
+    <span id="resultado"></span>
+
+</body>
+
+</html>
+
+
+
+<script>
+
+    var rodada_atual_var = 0
+    var pontos_time_A = 0
+    var pontos_time_B = 0
+    var pontos_time_C = 0
+
+
+    function realizar() {
+
+        var valor_premiacao = Number(inp_premiacao.value)
+        var rodadas = Number(inp_rodadas.value)
+        var time_a = Number(slc_timeA.value)
+        var time_b = Number(slc_timeB.value)
+        var time_c = Number(slc_timeC.value)
+
+
+
+        pontos_time_A += time_a
+        pontos_time_B += time_b
+        pontos_time_C += time_c
+
+        if (valor_premiacao < 1000 || rodadas < 1) {
+            alert("Dados inválidos para a rodada")
+        }
+        else if (rodada_atual_var == rodadas) {
+            revelar()
+            alert("Número máximo de rodadas atingido")
+        }
+        else {
+            spn_pontos_A.innerHTML = `${pontos_time_A}`
+            spn_pontos_B.innerHTML = `${pontos_time_B}`
+            spn_pontos_C.innerHTML = `${pontos_time_C}`
+            rodada_atual_var++
+            rodada_atual.innerHTML = `${rodada_atual_var}`
+        }
+
+
+    }
+
+    function revelar() {
+        var valor = Number(inp_premiacao.value)
+        var total = pontos_time_A + pontos_time_B + pontos_time_C
+        var valor_premiacao = Number(inp_premiacao.value)
+
+        var porc_a = valor * ((pontos_time_A / total) * 100) / 100
+        var porc_b = valor * ((pontos_time_B / total) * 100) / 100
+        var porc_c = valor * ((pontos_time_C / total) * 100) / 100
+
+        spn_pontos_A.innerHTML = `${porc_a.toFixed(1)}`
+        spn_pontos_B.innerHTML = `${porc_b.toFixed(1)}`
+        spn_pontos_C.innerHTML = `${porc_c.toFixed(1)}`
+
+        if(porc_a > porc_b && porc_a >porc_c) {
+            campeao.innerHTML = `Time A campeão!!!!`
+        }
+        else if (porc_b > porc_a && porc_b > porc_c){
+            campeao.innerHTML = `Time B campeão!!!!`
+
+        }
+        else if (porc_c > porc_a && porc_c > porc_b) {
+            campeao.innerHTML = `Time C campeão!!!!!!`
+        }
+        else{
+            empate.innerHTML = `EMPATE!!!!!`
+        }
+
+    }
+</script>
