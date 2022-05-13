@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome da pessoa que você mais ama na vida: <input id="inp_nome" type="text"> <br>    
+    O quanto você ama essa pessoa: <input id="inp_amor" type="number"> <br>
+    <button onclick="amor()">Expressar amor</button>
+    <div id="frase"></div>
+
+</body>
+</html>
+
+<script>
+    function amor(){
+        var nome = inp_nome.value
+        var qtd_amor = Number(inp_amor.value) 
+        var num_frase = 1
+        while(num_frase <= qtd_amor){
+            frase.innerHTML += `${num_frase}. ${nome}, eu te amo! Sempre lembre disso!<br>`
+            num_frase ++
+        }
+
+    }
+</script>
+
+

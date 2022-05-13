@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a url: <input id="inp_url" type="text"> <br>
+    Quantidade de imagens: <input id="inp_imagens" type="number"><br>
+    Quantidade de imagens por linhas <input id="inp_quantidade" type="number"><br>
+    <button onclick="exibir()">Ver imagens</button> 
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+
+
+    function exibir(){
+
+        var url = inp_url.value
+        var imagens = Number(inp_imagens.value)
+        var quantidade = Number(inp_quantidade.value)
+        var add_image = 1
+
+
+
+        while(add_image <= imagens){
+            resultado.innerHTML += `<img src="${url}">`
+            if(add_image % quantidade == 0){
+                resultado.innerHTML += `<   >`
+            }
+            ++add_image 
+    }
+
+    }
+</script>
+
+

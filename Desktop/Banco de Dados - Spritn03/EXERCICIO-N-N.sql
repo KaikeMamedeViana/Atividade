@@ -88,8 +88,13 @@ insert into relatorio values
 (null,  8 , 4 ,  3 , 10  ,  1000),
 (null,  7 , 3 ,  1 , 5  ,  2000),
 (null,  6 , 2 ,  2 , 300  ,  3000),
-(null,  5 , 2 ,  1 , 5 ,  4000);
+(null,  5 , 2 ,  1 , 5 ,  4000),
+(null,  4 , 2 ,  1 , 5 ,  4000),
+(null,  3 , 2 ,  1 , 5 ,  4000),
+(null,  2 , 2 ,  1 , 5 ,  4000),
+(null,  1 , 2 ,  1 , 5 ,  4000);
 
+update relatorio set fkVenda = 4 where idRelatorio= 1;
 
 insert into venda values 
 (null, 2000, '2002-02-14', 1),
@@ -150,22 +155,42 @@ SELECT * FROM cliente
 			ON indicado.idCliente = cliente.fkIndicacao
 				JOIN venda
 					ON fkCliente = cliente.idCliente
-						JOIN relatorio
-							ON ;
+						LEFT JOIN relatorio
+							ON fkVenda = idVenda
+								LEFT JOIN produto
+									ON fkProduto=idProduto;
 
 
 /*m) Exibir apenas a data da venda, o nome do produto e a quantidade do produto
 numa determinada venda.*/
 
 
+SELECT dataVenda, nomeProduto, SUM(qtdProduto)
+	FROM venda	
+		LEFT JOIN relatorio
+			ON fkVenda = idVenda
+				LEFT JOIN produto
+					ON fkProduto=idProduto where nomeProduto = 'gelo'; 
 
 
 
 /*n) Exibir apenas o nome do produto, o valor do produto e a soma da quantidade de
 produtos vendidos agrupados pelo nome do produto.*/
 
-
+SELECT nomeProduto, preco, SUM(qtdProduto)
+	FROM venda	
+		LEFT JOIN relatorio
+			ON fkVenda = idVenda
+				LEFT JOIN produto
+					ON fkProduto=idProduto where nomeProduto = 'gelo'; 
 
 /*o) Inserir dados de um novo cliente. Exibir os dados dos clientes, das respectivas
 vendas, e os clientes que não realizaram nenhuma venda.*/
 
+insert into cliente values 
+(null, 'angela','angela.mamede@sptehc.school','av da rua vermelha','jardim vermelho','São Paulo', null),
+(null, 'kaike','kaike.mamede@sptehc.school','av do futebol','jardim SPFC','São Paulo', null);
+
+SELECT * FROM cliente 
+	LEFT JOIN venda 
+		ON fkCliente = idCliente 
